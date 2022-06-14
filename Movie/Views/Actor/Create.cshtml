@@ -1,0 +1,35 @@
+﻿@model Actor
+
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-3">
+            <h2 class="text-primary">Create Actor</h2>
+        </div>
+        <hr />
+        <div asp-validation-summary="All"></div>
+       <div class="row mb-3">
+        <label asp-for="ImageUrl"></label>
+        <input asp-for="ImageUrl" class="form-control" />
+        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+       </div>
+       <div class="row mb-3">
+        <label asp-for="FullName"></label>
+        <input asp-for="FullName" class="form-control" />
+        <span asp-validation-for="FullName" class="text-danger"></span>
+        </div>
+        <div class="row mb-3">
+            <label asp-for="Bio"></label>
+            <input asp-for="Bio" class="form-control"/>
+            <span asp-validation-for="Bio" class="text-danger"/>
+        </div>
+      <button class="btn btn-primary" type="submit">Create</button>
+      </div>
+    <a asp-action="Index" asp-controller="Category">Back To List</a>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}
